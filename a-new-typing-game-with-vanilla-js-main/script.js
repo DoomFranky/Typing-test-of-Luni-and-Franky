@@ -7,6 +7,7 @@
  */
 let startTime = null, previousEndTime = null;
 let currentWordIndex = 0;
+let inputCount=1;
 const wordsToType = [];
 
 const modeSelect = document.getElementById("mode");
@@ -31,6 +32,7 @@ const startTest = (wordCount = 50) => {
     wordsToType.length = 0; // Clear previous words
     wordDisplay.innerHTML = ""; // Clear display
     currentWordIndex = 0;
+    inputCount=0;
     startTime = null;
     previousEndTime = null;
 
@@ -54,11 +56,16 @@ const startTimer = () => {
     if (!startTime) startTime = Date.now();
 };
 
+//Count the number of input who is type
+const inputCounter = ()=>{
+    return inputCount ++
+}
+
 // Calculate and return WPM & accuracy
 const getCurrentStats = () => {
     const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds
     const wpm = (wordsToType[currentWordIndex].length / 5) / (elapsedTime / 60); // 5 chars = 1 word
-    const accuracy = (wordsToType[currentWordIndex].length / inputField.value.length) * 100;
+    const accuracy = (wordsToType[currentWordIndex].length / inputCounter()) * 100;
 
     return { wpm: wpm.toFixed(2), accuracy: accuracy.toFixed(2) };
 };
@@ -71,7 +78,7 @@ const updateWord = (event) => {
 
             const { wpm, accuracy } = getCurrentStats();
             results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
-
+            inputCount=-1;
             currentWordIndex++;
             previousEndTime = Date.now();
             highlightNextWord();
@@ -99,6 +106,7 @@ const highlightNextWord = () => {
 inputField.addEventListener("keydown", (event) => {
     startTimer();
     updateWord(event);
+    inputCounter();
 });
 modeSelect.addEventListener("change", () => startTest());
 
