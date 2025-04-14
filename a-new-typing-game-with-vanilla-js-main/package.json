@@ -1,6 +1,6 @@
 {
   "name": "typing-website-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A barebones typing website for you to complete. ",
   "main": "index.html",
   "scripts": {
