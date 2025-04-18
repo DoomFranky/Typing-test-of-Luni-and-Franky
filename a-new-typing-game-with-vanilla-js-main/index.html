@@ -5,13 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Test</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js" 
+	integrity="sha512-1JkMy1LR9bTo3psH+H4SV5bO2dFylgOy+UJhMus1zF4VEFuZVu5lsi4I6iIndE4N9p01z1554ZDcvMSjMaqCBQ==" 
+	crossorigin="anonymous" referrerpolicy="no-referrer"
+	defer>
+	</script>
 </head>
 
 <body>
-    <header>
+	<nav class="col-lg-fluid">
+
+		<div class="logo">
+			<a href="index.html"><img src="assets/img/T leaf.jpg" alt="T_leaf_type"></a>
+		</div>
+		<div class="title"><p> Leaf Types</p></div>
+
+		<div class="menue">
+			<div class="btn"><i class="fa-solid fa-bars fa-2x"></i></div>
+			<div class="dropDown">
+				<ul>
+					<li><a href=""><i class="fa-solid fa-question"></i>: help</a></li>
+					<li><a href=""><i class="fa-solid fa-address-book"></i>: contact</a></li>
+					<li><a href="Loging.html"><i class="fa-solid fa-right-from-bracket"></i>: exit</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="theGame"> 
+	<header>
         <h1>Typing Test</h1>
-        <label for="mode">Select Mode:</label>
-        <select id="mode">
+        <label for="mode"> <i class="fa-solid fa-bolt"></i> Select Mode:</label>
+		<select id="mode">
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
@@ -19,10 +46,22 @@
     </header>
 
     <main>
-        <p id="word-display"></p>
+		<div class="pool">
+			<p id="word-display"></p>
+		</div>
+
         <input type="text" id="input-field" autofocus>
         <p id="results">Results : </p>
     </main>
+
+	<div class="notation">
+		<div><h2>(°o°) 60-80 wpm</h2></div>
+		<div><h2>(*~*) 30-40 wpm </h2></div>
+		<div><h2>(T-T) 10-20 wpm</h2></div>
+	</div>
+
+	<footer>
+	</footer>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,73 @@
+body{
+	background-color: rgb(0, 0, 7);
+	color:white;
+}
+
+
+.container{
+	margin:auto;
+	margin-top: 10%;
+	background-color: rgb(7, 6, 70);
+	width: 45ch;
+	height: 50ch;
+	border-color:rgb(19, 214, 149);
+	border-style: double;
+	border-collapse: collapse;
+	border-radius: 05%;
+	box-shadow: 
+    0 0 50px 60px rgba(57, 245, 141, 0.5),  /* soft glow */
+    0 0 150px 100px rgba(150, 255, 190, 0.3), /* outer glow */
+    0 0 300px 300px rgba(26, 235, 182, 0.2); /* ambient effect */; 
+}
+
+.logo{
+	
+	border-color:rgb(19, 214, 149);
+	border-style: double;
+	border-top: 05%;
+	height:25ch;
+
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding-top: 1ch;
+
+	text-align: center;
+
+	img{
+
+		margin-left: 15ch;
+		width: 10ch;
+		height: 10ch;
+		border-radius: 50%;
+	}
+}
+
+.btn{
+	width: 20ch;
+	height: 10ch;
+	border-color:rgb(19, 214, 149);
+	border-style: double;
+	border-radius: 05% ;
+
+	margin-left: 10ch;
+	margin-top: -5ch;
+
+		button{
+			width: 100%;
+			height: 100%;
+			background-color: rgb(19, 214, 149);
+			border-radius: 05%;
+			color: white;
+			font-size: 5ch;
+			
+		}
+		:hover{
+			transform: scale(1.1);
+			transition: 0.3s;
+		}
+}
+
+.presentation{
+	text-align: center;
+}

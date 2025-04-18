@@ -1,0 +1,103 @@
+body{
+	background-color: rgb(0, 0, 7);
+	color:white;
+}
+
+nav{
+	display: flex;
+	width: 100%;
+	height: 8ch;
+	background:linear-gradient(rgb(7, 6, 70),rgb(19, 214, 149));
+	opacity: 70%;
+	top: 0%;
+	position: fixed;
+	margin-bottom: 10px;
+	padding-top: 2ch;
+	box-shadow: 
+    0 0 50px 60px rgba(57, 245, 141, 0.5),  /* soft glow */
+    0 0 150px 100px rgba(150, 255, 190, 0.3), /* outer glow */
+    0 0 300px 300px rgba(26, 235, 182, 0.2); /* ambient effect */;
+}
+
+.logo img {
+	border-radius: 70%;
+	width: 5ch;
+	height: 5ch;
+	opacity: 130;
+	margin-left: 2ch;
+}
+
+.title{
+	margin-left: 5ch;
+	width: 20ch;
+	height: 4ch;
+	font-size: 3ch;
+}
+
+
+
+.menue{
+	margin-left: 54%;
+	&:hover .dropDown{
+		transition: 0.5s;
+		visibility: visible;
+	}
+}
+
+.btn{
+	color: aliceblue;
+	margin-left: 12ch;
+
+	&:hover {
+		color: rgb(7, 6, 70);
+	}
+}
+
+.dropDown{
+	background-color: white;
+	margin-left:1.5ch;
+	border-radius: 5%;
+
+	width: 15ch;
+	height: 9ch;
+	visibility: hidden;
+
+		a{
+			text-decoration:none;
+			font-size: 1.5ch;
+			color: rgb(7, 6, 70);
+				&:hover{
+					color: rgb(57, 173, 177);
+				}
+		}
+}
+
+.theGame{
+	width: 70%;
+	height: 70%;
+
+	margin-top: 11ch;
+	margin-left: 15%;
+	text-align: center;
+	height: 45ch;
+	object-fit:cover;
+}
+
+.notation{
+	margin-top: 02ch;
+	color:rgb(19, 214, 149);
+	text-align: justify;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: 2ch;
+}
+.pool{
+	margin-top: 02ch;
+	margin-bottom: 2ch;
+	background-color: white;
+	border-radius: 2%;
+	height:13ch;
+	font-size: 2.5ch;
+	color: rgb(19, 214, 149);
+}
