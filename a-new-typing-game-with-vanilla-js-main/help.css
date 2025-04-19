@@ -14,11 +14,10 @@ nav{
 	margin-bottom: 10px;
 	padding-top: 2ch;
 	box-shadow: 
-    0 0 50px 60px rgba(57, 245, 141, 0.5),  /* soft glow */
-    0 0 150px 100px rgba(150, 255, 190, 0.3), /* outer glow */
-    0 0 300px 300px rgba(26, 235, 182, 0.2); /* ambient effect */;
+    0 0 50px 60px rgba(57, 245, 141, 0.5),  
+    0 0 150px 100px rgba(150, 255, 190, 0.3), 
+    0 0 300px 300px rgba(26, 235, 182, 0.2); 
 }
-
 .logo img {
 	border-radius: 70%;
 	width: 5ch;
@@ -59,7 +58,7 @@ nav{
 	border-radius: 5%;
 
 	width: 15ch;
-	height: 9ch;
+	height: 10ch;
 	visibility: hidden;
 
 		a{
@@ -103,7 +102,7 @@ nav{
 
 .dico{
 	width: 30ch;
-	height: 15ch;
+	height: 17ch;
 	border-color:rgb(19, 214, 149);
 	border-style: double;
 	border-collapse: collapse;
@@ -119,7 +118,7 @@ nav{
 		border-style: double;
 		border-collapse: collapse;
 		border-radius: 05%;
-		margin-top: 4ch;
+		margin-top: 3ch;
 		padding: 0.3cm;
 		text-align: center;
 }

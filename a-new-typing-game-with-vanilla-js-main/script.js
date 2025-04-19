@@ -49,6 +49,9 @@ const startTest = (wordCount = 50) => {
 
     inputField.value = "";
     results.textContent = "";
+
+	// 🟢 Initialisation pour stocker les WPM de chaque mot tapé
+    window.wpmHistory = [];
 };
 
 // Start the timer when user begins typing
@@ -71,7 +74,7 @@ const getCurrentStats = () => {
 };
 
 // Move to the next word and update stats only on spacebar press
-const updateWord = (event) => {
+/*const updateWord = (event) => {
     if (event.key === " ") { // Check if spacebar is pressed
         if (inputField.value.trim() === wordsToType[currentWordIndex]) {
             if (!previousEndTime) previousEndTime = startTime;
@@ -87,7 +90,62 @@ const updateWord = (event) => {
             event.preventDefault(); // Prevent adding extra spaces
         }
     }
+};*/
+
+const updateWord = (event) => {
+    if (event.key === " ") { // Check si espace est pressé
+        if (inputField.value.trim() === wordsToType[currentWordIndex]) {
+            if (!previousEndTime) previousEndTime = startTime;
+
+            const { wpm, accuracy } = getCurrentStats();
+            results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
+
+            // Stockage de l'historique WPM
+            if (!window.wpmHistory) window.wpmHistory = [];
+            window.wpmHistory.push(parseFloat(wpm));
+
+            inputCount = -1;
+            currentWordIndex++;
+            previousEndTime = Date.now();
+
+            // Si le test est terminé
+            if (currentWordIndex >= wordsToType.length) {
+                const totalTime = (Date.now() - startTime) / 1000 / 60; // En minutes
+                const totalChars = wordsToType.join(" ").length;
+                const avgWPM = (totalChars / 5) / totalTime;
+                const totalInputs = inputCount + totalChars;
+                const totalAccuracy = (totalChars / totalInputs) * 100;
+
+                // ✅ Enregistrement propre dans localStorage
+                localStorage.setItem("typingResults", JSON.stringify({
+                    avgWPM: avgWPM.toFixed(2),           // PAS "avg WPM"
+                    accuracy: totalAccuracy.toFixed(2),
+                    wpmHistory: window.wpmHistory
+                }));
+
+                // Historique des tests
+                const testHistory = JSON.parse(localStorage.getItem("testHistory")) || [];
+
+                testHistory.push({
+                    avgWPM: avgWPM.toFixed(2),
+                    date: new Date().toLocaleString()
+                });
+
+                localStorage.setItem("testHistory", JSON.stringify(testHistory));
+
+                // Redirection
+                window.location.href = "Game_over.html";
+                return;
+            }
+
+            // Passage au mot suivant
+            highlightNextWord();
+            inputField.value = "";
+            event.preventDefault(); // Empêche l'espace d’être tapé
+        }
+    }
 };
+
 
 // Highlight the current word in red
 const highlightNextWord = () => {
