@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Test</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="help.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js" 
 	integrity="sha512-1JkMy1LR9bTo3psH+H4SV5bO2dFylgOy+UJhMus1zF4VEFuZVu5lsi4I6iIndE4N9p01z1554ZDcvMSjMaqCBQ==" 
 	crossorigin="anonymous" referrerpolicy="no-referrer"
 	defer>
 	</script>
+	<title>Document</title>
 </head>
-
 <body>
 	<nav class="col-lg-fluid">
 
@@ -34,36 +32,44 @@
 		</div>
 	</nav>
 
-	<div class="theGame"> 
-	<header>
-        <h1>Typing Test</h1>
-        <label for="mode"> <i class="fa-solid fa-bolt"></i> Select Mode:</label>
-		<select id="mode">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select>
-    </header>
+	<div class="container">
+		<div class="intro">
+			<h2>Introduction</h2>
 
-    <main>
-		<div class="pool">
-			<p id="word-display"></p>
+			<p>Hello and wellcome to leaf Types.</p>
+
+			<p>leaf types is a typing tools that allow you
+				to exercise your typing skills while recording 
+				your timing, accuracy and hopefuly your evolution </p>
+
+			<p>this project is made with the idea of
+				 simplicity and user friendliness as core. 
+				We want to make sure that our 
+				users has a pleasant exeriences without being
+				 overwelmed by the complexit of our site</p>
 		</div>
 
-        <input type="text" id="input-field" autofocus>
-        <p id="results">Results : </p>
-    </main>
+		<div class="setting">
 
-	<div class="notation">
-		<div><h2>(°o°) 60-80 wpm</h2></div>
-		<div><h2>(*~*) 30-40 wpm </h2></div>
-		<div><h2>(T-T) 10-20 wpm</h2></div>
+		<div class="dico">
+			<h2>dico</h2>
+			<p>accuracy = how well you types</p>
+			<p>wpm = word per minutes (world record: 305 wpm)</p>
+		</div>
+
+		<div class="option">
+			<h2>option</h2>
+			<p>easy: 5-6 letters per word</p>
+			<p>medium:6-8 letters per word</p>
+			<p>hard: 10-12 letters per word</p>
+		</div>
+		</div>
+		
+		<div class="pics">
+			<h2>point the curser on the picture to see more</h2>
+			<img src="assets/img/help.png" alt="help">
+		</div>
 	</div>
-
-	<footer>
-	</footer>
-
-    <script src="script.js"></script>
+	
 </body>
-
 </html>
